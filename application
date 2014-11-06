@@ -22,7 +22,7 @@ package
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 
 			var global_facebook_login:ButtonClass = new ButtonClass("Facebook Login",(stage.stageWidth - 150));
-/*adfdafdafdaf*/
+
 			
 
 			var _tile_height:Number = 140;
