@@ -1,1 +1,65 @@
-a
+<!DOCTYPE html>
+
+<!-- add scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.Jcrop.min.js"></script>
+	<script src="js/script.js"></script>
+<html>
+<head>
+<style>
+body {
+margin: 0px;
+padding: 0px;
+}
+</style>
+</head>
+<body>
+
+<input type='file' id="fileUpload" />
+<canvas id="canvas"  width="400" height="200" style="border:2px solid #000000;">
+
+</canvas>
+
+
+<script>
+
+
+
+
+
+
+
+
+
+function el(id) { return document.getElementById(id); }
+
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+	
+
+function readImage() {
+if (this.files && this.files[0]) {
+var FR = new FileReader();
+FR.onload = function (e) {
+var img = new Image();
+img.onload = function () {
+context.drawImage(img, 0,0);
+//context.drawImage(img, 0, 0, canvas.width, canvas.height);
+};
+img.src = e.target.result;
+};
+FR.readAsDataURL(this.files[0]);
+}
+}
+
+el("fileUpload").addEventListener("change", readImage, false);
+
+
+
+</script>
+
+
+</body>
+
+
+</html>
